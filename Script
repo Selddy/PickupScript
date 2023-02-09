@@ -1,0 +1,14 @@
+local debounce = false
+
+script.Parent.Touched:Connect(function(hit)
+if hit.Parent:FindFirstChild("Humanoid") and debounce == false then
+hit.Parent:FindFirstChild("Humanoid").JumpHeight += 10 -- For speed do WalkSpeed, For healing do Health
+debounce = true
+script.Parent.Transparency = 1
+script.Parent.ParticleEmitter.Enabled = false
+wait(5)
+debounce = false
+script.Parent.Transparency = 0
+script.Parent.ParticleEmitter.Enabled = true
+end
+end)
